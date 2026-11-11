@@ -21,7 +21,6 @@ function doPost(e) {
 
   var ime = clean_(d.ime, 60), pri = clean_(d.priimek, 60), mail = clean_(d.email, 120).toLowerCase();
   if (!ime || !pri || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)) { return out_('invalid'); }
-  var novice = d.novice === true;
   var naprava = clean_(d.naprava, 20);
 
   var lock = LockService.getScriptLock();
@@ -35,12 +34,11 @@ function doPost(e) {
       for (var i = 0; i < rows.length; i++) {
         var k = String(rows[i][2]).toLowerCase() + '|' + (String(rows[i][0]) + ' ' + String(rows[i][1])).toLowerCase();
         if (k === key) {
-          if (novice) { sh.getRange(i + 2, 5).setValue('DA'); }
           return out_('dup');
         }
       }
     }
-    sh.appendRow([new Date(), ime, pri, mail, novice ? 'DA' : 'NE', naprava]);
+    sh.appendRow([new Date(), ime, pri, mail, naprava]);
   } finally {
     lock.releaseLock();
   }
