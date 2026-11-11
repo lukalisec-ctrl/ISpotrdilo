@@ -375,7 +375,7 @@
       fetch(CFG.SHEET_URL, {
         method: 'POST', mode: 'no-cors', keepalive: true,
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({ token: CFG.TOKEN, ime: d.ime, priimek: d.priimek, email: d.email, naprava: d.naprava })
+        body: JSON.stringify({ token: CFG.TOKEN, ime: d.ime, priimek: d.priimek, email: d.email, novice: d.novice, naprava: d.naprava })
       }).then(function () { try { sessionStorage.setItem(key, '1'); } catch (e) { } }, function () { });
     } catch (e) { /* zapis ne sme ovirati prenosa */ }
   }
@@ -453,7 +453,7 @@
       renderHelp();
 
       if (!bot) {
-        sendToSheet({ ime: ime, priimek: pri, email: mail, naprava: device() });
+        sendToSheet({ ime: ime, priimek: pri, email: mail, novice: $('novice').checked, naprava: device() });
       }
       state.email = mail;
       setBusy(false);
