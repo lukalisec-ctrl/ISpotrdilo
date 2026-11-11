@@ -513,8 +513,6 @@
       var c = $('deco'), g = c.getContext('2d');
       g.imageSmoothingEnabled = true;
       g.drawImage(a.planet, 0, 0, c.width, c.height);
-      var bp = $('bgplanet');
-      if (bp) { var bg = bp.getContext('2d'); bg.imageSmoothingEnabled = true; bg.drawImage(a.planet, 0, 0, bp.width, bp.height); }
     }).catch(function () { });
     ensureFonts('');
   }

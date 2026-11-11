@@ -128,18 +128,3 @@ h1::after { content: ""; display: block; width: 56px; height: 3px; margin: 12px 
   #view-form:not([hidden]), #view-result:not([hidden]) { animation: none; }
 }
 .nw { white-space: nowrap; }
-
-/* Namizni zaslon: velik planet v ozadju, ves cas prisoten */
-.bgplanet { display: none; }
-@media (min-width: 900px) {
-  .bgplanet {
-    display: block; position: fixed; z-index: -1; pointer-events: none;
-    width: 135vh; height: 135vh; max-width: none;
-    left: 50%; top: 50%; margin: -67.5vh 0 0 -50vh;
-    opacity: .3; filter: blur(1.2px);
-  }
-  .deco { display: none; }
-  .head { padding-top: 28px; }
-  .sub { color: var(--ink); font-weight: 500; }
-  .tag { color: #b8296a; }
-}
