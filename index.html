@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f7f2fc">
+<title>Potrdilo o udeležbi: Inteligenca srca</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/caladea@5.3.0/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/caladea@5.3.0/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/caladea@5.3.0/400-italic.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/carlito@5.3.0/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/carlito@5.3.0/700.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+<main class="wrap">
+
+  <header class="head">
+    <canvas id="deco" class="deco" width="240" height="240" aria-hidden="true"></canvas>
+    <p class="tag">HeartMath Experience Slovenia</p>
+    <h1>Potrdilo o udeležbi</h1>
+    <p class="sub">Inteligenca srca, 28. oktober 2026, Odiseja Ljubljana</p>
+  </header>
+
+  <section id="view-form" class="card">
+    <p class="lead">Vpišite svoje podatke in potrdilo bo pripravljeno takoj.</p>
+    <form id="form" novalidate autocomplete="on">
+
+      <div class="field">
+        <label for="ime">Ime</label>
+        <input id="ime" name="given-name" type="text" autocomplete="given-name" autocapitalize="words" spellcheck="false" maxlength="60" aria-describedby="err-ime">
+        <p class="err" id="err-ime" role="alert"></p>
+      </div>
+
+      <div class="field">
+        <label for="priimek">Priimek</label>
+        <input id="priimek" name="family-name" type="text" autocomplete="family-name" autocapitalize="words" spellcheck="false" maxlength="60" aria-describedby="err-priimek">
+        <p class="err" id="err-priimek" role="alert"></p>
+      </div>
+
+      <div class="field">
+        <label for="email">E-naslov</label>
+        <input id="email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="120" aria-describedby="hint-email err-email">
+        <p class="hint" id="hint-email">E-naslov uporabimo za morebitno ponovno pošiljanje potrdila.</p>
+        <p class="err" id="err-email" role="alert"></p>
+        <div class="suggest" id="suggest" hidden>
+          <p>Ste mislili <strong id="sug-addr"></strong>?</p>
+          <button type="button" class="btn small" id="sug-yes">Da, popravi</button>
+          <button type="button" class="btn small ghost" id="sug-no">Ne, naslov je pravilen</button>
+        </div>
+      </div>
+
+      <div class="hp" aria-hidden="true">
+        <label for="website">Spletna stran</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="field">
+        <label class="check" for="gdpr">
+          <input id="gdpr" type="checkbox">
+          <span>Strinjam se z obdelavo osebnih podatkov v skladu s
+            <a href="https://www.spremenitesvojum.si/splo%C5%A1nipogojiposlovanja" target="_blank" rel="noopener">Splošnimi pogoji poslovanja</a>.</span>
+        </label>
+        <p class="err" id="err-gdpr" role="alert"></p>
+      </div>
+
+      <div class="field">
+        <label class="check" for="novice">
+          <input id="novice" type="checkbox">
+          <span>Želim prejemati novice Mind &amp; Heart Academy (neobvezno).</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn primary" id="submit">Pripravi moje potrdilo</button>
+      <p class="err center" id="err-general" role="alert"></p>
+    </form>
+  </section>
+
+  <section id="view-result" class="card" hidden>
+    <h2 id="result-title" tabindex="-1">Vaše potrdilo je pripravljeno</h2>
+    <p class="lead">Preverite, ali je ime pravilno napisano.</p>
+    <canvas id="preview" class="preview" aria-label="Predogled potrdila"></canvas>
+
+    <a id="dl-pdf" class="btn primary" href="#">Prenesi potrdilo (PDF)</a>
+    <a id="dl-img" class="btn secondary" href="#">Shrani kot sliko</a>
+
+    <div class="help" id="help"></div>
+
+    <div class="links">
+      <button type="button" class="linkbtn" id="edit">Popravi ime</button>
+      <button type="button" class="linkbtn" id="another">Potrdilo za drugo osebo</button>
+    </div>
+  </section>
+
+  <footer class="foot">Mind &amp; Heart Academy</footer>
+</main>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
