@@ -451,6 +451,7 @@
       bindDownload($('dl-pdf'), urls[0], base + '.pdf');
       bindDownload($('dl-img'), urls[1], base + '.jpg');
       renderHelp();
+      $('thanks').hidden = true;
 
       if (!bot) {
         sendToSheet({ ime: ime, priimek: pri, email: mail, novice: $('novice').checked, naprava: device() });
@@ -468,8 +469,9 @@
   function bindDownload(a, url, filename) {
     a.href = url; a.setAttribute('download', filename);
     a.onclick = function (ev) {
-      // Starejši brskalniki ne podpirajo atributa download: odpri datoteko v novem zavihku
+      // Starej\u0161i brskalniki ne podpirajo atributa download: odpri datoteko v novem zavihku
       if (!('download' in document.createElement('a'))) { ev.preventDefault(); window.open(url, '_blank'); }
+      $('thanks').hidden = false;
     };
   }
 
