@@ -9,7 +9,7 @@
   var S = CW / PW;
   var LEFT = 24 * MM, LEFT_W = 110 * MM;
   var D = 140 * MM;                                // premer motiva
-  var CX = PW - 14 * MM - D / 2, CY = PH / 2;     // sredisce motiva (CY od spodaj)
+  var CX = PW - 14 * MM - D / 2, CY = PH / 2 - 10 * MM;     // sredisce motiva (CY od spodaj), 10 mm nizje od sredine
 
   var COL = { navy: '#0d1b45', violet: '#542867', magenta: '#d63b7c', ink: '#2a2d45', muted: '#6b6e86' };
   var SERIF = 'Caladea, Cambria, Georgia, "Times New Roman", serif';
@@ -231,7 +231,7 @@
     drawGlow();
     ctx.imageSmoothingEnabled = true;
     if ('imageSmoothingQuality' in ctx) { ctx.imageSmoothingQuality = 'high'; }
-    ctx.drawImage(assets.planet, (CX - D / 2) * S, (PH - D) / 2 * S, D * S, D * S);
+    ctx.drawImage(assets.planet, (CX - D / 2) * S, (PH - CY - D / 2) * S, D * S, D * S);
 
     // Zgornji pas
     var y = PH - 30 * MM;
